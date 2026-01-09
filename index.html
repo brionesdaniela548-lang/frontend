@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Académico</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- LOGIN -->
+<div id="vistaLogin" class="vh-100 d-flex justify-content-center align-items-center">
+  <form id="formLogin" class="card p-4 shadow" style="width: 350px;">
+    <h4 class="text-center mb-3">Iniciar Sesión</h4>
+    <input id="loginCedula" class="form-control mb-2" placeholder="Cédula">
+    <input id="loginClave" type="password" class="form-control mb-3" placeholder="Clave">
+    <button class="btn btn-primary w-100">Ingresar</button>
+    <div id="loginError" class="text-danger mt-2 text-center"></div>
+  </form>
+</div>
+
+<!-- DASHBOARD -->
+<div id="vistaDashboard" class="d-none container py-4">
+  <nav class="mb-4">
+    <button id="btnPerfil" class="btn btn-outline-primary me-2">Perfil</button>
+    <button id="btnEstudiantes" class="btn btn-outline-secondary me-2">Estudiantes</button>
+    <button id="btnMaterias" class="btn btn-outline-info me-2">Materias</button>
+    <button id="btnNotas" class="btn btn-outline-success">Notas</button>
+  </nav>
+
+  <!-- PERFIL -->
+  <div id="vistaPerfil">
+    <h3 class="mb-3">Perfil</h3>
+    <div class="card p-3 shadow-sm">
+      <p><strong>Nombre:</strong> <span id="perfilNombre"></span></p>
+      <p><strong>Cédula:</strong> <span id="perfilCedula"></span></p>
+      <p><strong>Rol:</strong> <span id="perfilRol"></span></p>
+    </div>
+  </div>
+
+  <!-- ESTUDIANTES -->
+  <div id="vistaEstudiantes" class="d-none">
+    <h3 class="mb-3">Estudiantes</h3>
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr><th>ID</th><th>Nombre</th></tr>
+      </thead>
+      <tbody id="tablaEstudiantes"></tbody>
+    </table>
+  </div>
+
+  <!-- MATERIAS -->
+  <div id="vistaMaterias" class="d-none">
+    <h3 class="mb-3">Materias</h3>
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr><th>Código</th><th>Nombre</th></tr>
+      </thead>
+      <tbody id="tablaMaterias"></tbody>
+    </table>
+  </div>
+
+  <!-- NOTAS -->
+  <div id="vistaNotas" class="d-none">
+    <h3 class="mb-3">Notas</h3>
+    <div id="formNotasDocente" class="card p-3 mb-3 shadow-sm">
+      <h5 class="mb-3">Registrar Nota</h5>
+      <input id="notaEstudiante" class="form-control mb-2" placeholder="ID Estudiante">
+      <input id="notaMateria" class="form-control mb-2" placeholder="Código Materia">
+      <input id="notaValor" class="form-control mb-3" placeholder="Nota">
+      <button id="btnGuardarNota" class="btn btn-success w-100">Guardar Nota</button>
+    </div>
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr><th>Materia</th><th>Nota</th></tr>
+      </thead>
+      <tbody id="tablaNotasEstudiante"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
